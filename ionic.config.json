@@ -1,0 +1,7 @@
+{
+  "name": "bookProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
