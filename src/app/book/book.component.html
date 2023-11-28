@@ -1,7 +1,7 @@
 <!-- List item home page-->
 
 <ion-item *ngIf="book" [routerLink]="'/book/' + book.id" [detail]="false">
-  <div slot="start" [class]="!book.read ? 'dot dot-unread' : 'dot'"></div>
+  <div slot="start"><ion-checkbox  [class]="!book.read ? 'dot dot-unread' : 'dot'"></ion-checkbox></div>
   <ion-label class="ion-text-wrap">
     <h2>
       {{ book.title }}
