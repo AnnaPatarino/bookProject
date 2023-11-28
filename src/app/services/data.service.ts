@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
-export interface Message {
+export interface Book {
+  [x: string]: any;
   title: string;
   author: string;
   description: string;
@@ -13,7 +14,7 @@ export interface Message {
   providedIn: 'root'
 })
 export class DataService {
-  public messages: Message[] = [
+  public books: Book[] = [
     {
       title: "The Dragon's Prophecy",
       author: 'Elena Nightshade',
@@ -110,11 +111,11 @@ export class DataService {
 
   constructor() { }
 
-  public getMessages(): Message[] {
-    return this.messages;
+  public getBooks(): Book[] {
+    return this.books;
   }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
+  public getBookById(id: number): Book {
+    return this.books[id];
   }
 }

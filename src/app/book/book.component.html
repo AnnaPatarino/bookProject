@@ -1,0 +1,18 @@
+<!-- List item home page-->
+
+<ion-item *ngIf="book" [routerLink]="'/book/' + book.id" [detail]="false">
+  <div slot="start" [class]="!book.read ? 'dot dot-unread' : 'dot'"></div>
+  <ion-label class="ion-text-wrap">
+    <h2>
+      {{ book.title }}
+      <span class="date">
+        <ion-note>{{ book.publicationYear }}</ion-note>
+        <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+      </span>
+    </h2>
+    <h3>{{ book.author }}</h3>
+    <p>
+      {{book.description}}
+    </p>
+  </ion-label>
+  </ion-item>
