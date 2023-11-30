@@ -1,8 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, Input, inject } from '@angular/core';
 import { RefresherCustomEvent } from '@ionic/angular';
-import { BookComponent } from '../book/book.component';
+
 
 import { DataService, Book } from '../services/data.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +13,7 @@ import { DataService, Book } from '../services/data.service';
 })
 export class HomePage {
   private data = inject(DataService);
-  constructor() {}
+  constructor(private readonly _route: Router) {}
 
   refresh(ev: any) {
     setTimeout(() => {
@@ -22,4 +24,5 @@ export class HomePage {
   getBooks(): Book[] {
     return this.data.getBooks();
   }
+
 }

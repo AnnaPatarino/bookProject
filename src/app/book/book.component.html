@@ -1,18 +1,24 @@
-<!-- List item home page-->
+<ion-list>
+  <ion-item-sliding *ngIf="book">
+    <ion-item [routerLink]="'/book/' + book.id" [detail]="false">
+      <ion-checkbox slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
 
-<ion-item *ngIf="book" [routerLink]="'/book/' + book.id" [detail]="false">
-  <ion-checkbox slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
-  <ion-label class="ion-text-wrap" appTitleColor>
-    <h2 appTitleColor>
-      {{ book.title }}
-      <span class="date">
-        <ion-note class="year">{{ book.publicationYear }}</ion-note>
-        <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
-      </span>
-    </h2>
-    <h3>{{ book.author }}</h3>
-    <p>
-      {{ book.description }}
-    </p>
-  </ion-label>
-</ion-item>
+      <ion-label class="ion-text-wrap" appTitleColor>
+        <h2>
+          {{ book.title }}
+          <span class="date">
+            <ion-note class="year">{{ book.publicationYear }}</ion-note>
+            <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
+          </span>
+        </h2>
+        <h3>{{ book.author }}</h3>
+        <p>{{ book.description }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option>Edit</ion-item-option>
+      <ion-item-option color="danger">Delete</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
