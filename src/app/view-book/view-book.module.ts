@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ViewBookPageRoutingModule } from './view-book-routing.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

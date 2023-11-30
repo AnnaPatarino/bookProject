@@ -50,19 +50,14 @@ ion-item ion-note.md {
   margin-right: 14px;
 }
 
-.dot {
-  display: block;
-  height: 20px;
-  width: 20px;
-  align-self: start;
-  margin: 16px 10px 16px 16px;
-}
-
-.dot-unread {
-  background: var(--ion-color-primary);
-}
 
 ion-footer ion-title {
   font-size: 11px;
   font-weight: normal;
+}
+
+.allinea{
+  display: flex;
+  float: left;
+  margin-left: 10px;
 }
