@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { NumericValueAccessor } from '@ionic/angular';
 
 export interface Book {
   title: string;
@@ -117,5 +118,13 @@ export class DataService {
   }
   public delete(id: number){
     this.books = this.books.filter(item => item.id !== id)
+  }
+
+  public getNewId(): number{
+ 
+      const id: number = this.books.length;
+      const newId: number = id + 1;
+  
+      return newId
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Book, DataService } from '../services/data.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
@@ -32,11 +32,10 @@ export class EditComponent  implements OnInit {
 
   private _setForm(): void {
     this.formBook = new FormGroup({
-      title: new FormControl(this.book!.title),
-      author: new FormControl(this.book!.author),
+      title: new FormControl(this.book!.title, Validators.required),
+      author: new FormControl(this.book!.author, Validators.required),
       description: new FormControl(this.book!.description),
-      publicationYear: new FormControl(this.book!.publicationYear),
-      id: new FormControl(this.book!.id)
+      publicationYear: new FormControl(this.book!.publicationYear)
 
     })}
 
