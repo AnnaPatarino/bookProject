@@ -10,7 +10,7 @@ import { DataService, Book } from '../services/data.service';
   styleUrls: ['./view-book.page.scss'],
 })
 export class ViewBookPage implements OnInit {
-  public book!: Book;
+  public book!: Book | undefined;
   private data = inject(DataService);
   private activatedRoute = inject(ActivatedRoute);
   private platform = inject(Platform);

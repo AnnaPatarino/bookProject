@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   private data = inject(DataService);
-  constructor(private readonly _route: Router) {}
+  constructor() {}
 
   refresh(ev: any) {
     setTimeout(() => {

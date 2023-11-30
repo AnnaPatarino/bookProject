@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   {
@@ -9,6 +10,10 @@ const routes: Routes = [
   {
     path: 'book/:id',
     loadChildren: () => import('./view-book/view-book.module').then( m => m.ViewBookPageModule)
+  },
+  {
+    path: 'edit/:id',
+    component: EditComponent
   },
   {
     path: '',
