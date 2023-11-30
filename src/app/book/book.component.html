@@ -1,8 +1,8 @@
 <!-- List item home page-->
 
-<ion-item *ngIf="book" [routerLink]="'/book/' + book.id" [detail]="false" >
+<ion-item *ngIf="book" [routerLink]="'/book/' + book.id" [detail]="false">
   <ion-checkbox slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
-  <ion-label class="ion-text-wrap">
+  <ion-label class="ion-text-wrap" appTitleColor>
     <h2 appTitleColor>
       {{ book.title }}
       <span class="date">

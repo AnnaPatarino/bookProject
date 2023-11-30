@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 import { BookComponentModule } from '../book/book.module';
+import { TitleColorDirective } from '../directive/title-color.directive';
 
 @NgModule({
   imports: [

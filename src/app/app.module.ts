@@ -10,7 +10,7 @@ import { TitleColorDirective } from './directive/title-color.directive';
 
 
 @NgModule({
-  declarations: [AppComponent, TitleColorDirective],
+  declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

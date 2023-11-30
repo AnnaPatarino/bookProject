@@ -6,10 +6,11 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { BookComponent } from './book.component';
+import { TitleColorDirective } from '../directive/title-color.directive';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule, RouterModule],
-  declarations: [BookComponent],
+  declarations: [BookComponent, TitleColorDirective],
   exports: [BookComponent]
 })
 export class BookComponentModule {}
