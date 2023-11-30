@@ -10,7 +10,7 @@ import { TitleColorDirective } from '../directive/title-color.directive';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule, RouterModule, ReactiveFormsModule],
-  declarations: [CreateComponent, TitleColorDirective],
+  declarations: [CreateComponent],
   exports: [CreateComponent]
 })
 export class CreateComponentModule {}

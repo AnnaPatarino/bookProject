@@ -5,9 +5,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
-import { BookComponentModule } from '../book/book.module';
+
 import { EditComponentModule } from '../edit/edit.module';
 import { CreateComponentModule } from '../create/create.module';
+import { BookComponentModule } from '../book/book.module';
+
 
 @NgModule({
   imports: [
