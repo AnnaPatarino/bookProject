@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RefresherCustomEvent } from '@ionic/angular';
 
 
 import { DataService, Book } from '../services/data.service';
-import { Router } from '@angular/router';
+import { Router, } from '@angular/router';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
   private data = inject(DataService);
-  constructor() {}
+  constructor(private readonly _route: Router) { }
 
   refresh(ev: any) {
     setTimeout(() => {
@@ -25,4 +25,7 @@ export class HomePage {
     return this.data.getBooks();
   }
 
+  goCreate() {
+    this._route.navigate(['create'])
+  }
 }
