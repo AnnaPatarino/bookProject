@@ -1,6 +1,6 @@
 <ion-list appTitleColor>
   <ion-item-sliding *ngIf="book">
-    <ion-item [routerLink]="'/book/' + book.id" [detail]="false">
+    <ion-item [routerLink]="'/book/' + book.id" [detail]="false" appTitleColor>
       <ion-checkbox slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
 
       <ion-label class="ion-text-wrap" >

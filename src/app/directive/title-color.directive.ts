@@ -10,14 +10,15 @@ export class TitleColorDirective {
  @HostListener('mouseenter') onEnter(){
   this.changeColor('red');
  }
- @HostListener('mouseleave') onLeave(){
-  this.changeColor('white');
- }
+//  @HostListener('mouseleave') onLeave(){
+//   this.changeColor('white');
+//  }
 
  changeColor(color: string){
+  const checkbox = this.el.nativeElement.querySelector('ion-checkbox')
   const h1Element = this.el.nativeElement.querySelector('h2');
     
-    if (h1Element) {
+    if (checkbox.value === 'on') {
       h1Element.style.color = color;
     }
   }
