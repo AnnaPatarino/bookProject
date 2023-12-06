@@ -1,0 +1,27 @@
+.logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Media query per aggiustare la dimensione del logo su schermi più piccoli */
+  @media (max-width: 768px) {
+    .logo {
+      max-width: 80%; /* Puoi regolare la percentuale in base alle tue esigenze */
+    }
+  }
+
+// .logo {
+//     max-width: 100%;
+//     max-width: 300px; 
+//     height: auto;
+//   }
+
+  .button{
+    background-color: rgb(255, 234, 0);
+    border-radius: 90%;
+    color: black;
+    margin-right: 8vh;
+    height: 4.243281471004243vh;
+    width: 4.243281471004243vh;
+    text-align: center;
+  }

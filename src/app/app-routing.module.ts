@@ -5,6 +5,10 @@ import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
   {
+    path: 'enter',
+    loadChildren: () => import('./enter/enter.module').then( m => m.EnterPageModule)
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -22,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'enter',
     pathMatch: 'full'
   },
 ];
