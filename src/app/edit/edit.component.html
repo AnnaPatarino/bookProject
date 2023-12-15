@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button  defaultHref="/"></ion-back-button>
+      <ion-back-button  defaultHref="/home"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<ion-content>
 <form *ngIf="formBook" [formGroup]="formBook" (ngSubmit) = "submitForm()" novalidate>
   <ion-list>
   <ion-item>
@@ -17,13 +18,14 @@
   </ion-item>
 
   <ion-item>
-    <ion-input label="Description" placeholder="..."  labelPlacement="stacked" formControlName="description" type="string"></ion-input>
+    <ion-textarea label="Description" placeholder="..."  labelPlacement="stacked" formControlName="description" type="string" [autoGrow]="true"></ion-textarea>
   </ion-item>
 
   <ion-item>
     <ion-input label="Publication Year" placeholder="1994"  labelPlacement="stacked" [readonly]="true"  formControlName="publicationYear" type="number"></ion-input>
   </ion-item>
 
-  <ion-button type="submit" expand = "block" [disabled] = "!formBook.valid">Save</ion-button>
+  <ion-button color="warning" type="submit" expand = "block" [disabled] = "!formBook.valid">Save</ion-button>
 </ion-list>
 </form>
+</ion-content>

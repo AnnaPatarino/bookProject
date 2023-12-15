@@ -6,12 +6,11 @@ import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { EnterPage } from './enter.page';
-import { TitleColorDirective } from '../directive/title-color.directive';
 import { HomePageRoutingModule } from './enter-routing.module';
 
 @NgModule({
   imports: [ CommonModule, FormsModule, IonicModule, RouterModule, ReactiveFormsModule, HomePageRoutingModule],
-  declarations: [EnterPage, TitleColorDirective],
+  declarations: [EnterPage],
   exports: [EnterPage]
 })
 export class EnterPageModule {}

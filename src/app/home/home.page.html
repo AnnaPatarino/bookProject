@@ -1,11 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <!-- <ion-toolbar>
     <ion-title>
       <img class="logo" src="/assets/img/logo.png"/>
+      <ion-icon color="warning" class="iconplus" name ="add-circle-outline" (click)="goCreate()"></ion-icon>
     </ion-title>
-    <button class="button" slot="end" (click)="goCreate()">
-      <ion-icon  name="add" ></ion-icon>
-    </button>
+
+  </ion-toolbar> -->
+
+  <ion-toolbar>
+    <ion-title><img class="logo" src="/assets/img/logo.png"/></ion-title>
+    <ion-buttons [collapse]="true" slot="end">
+      <ion-button><ion-icon color="warning" class="iconplus" name ="add-circle-outline" (click)="goCreate()"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -17,7 +23,8 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        The Fantasy Corner
+        <img class="logo" src="/assets/img/logo.png"/>
+        
       </ion-title>
     </ion-toolbar>
   </ion-header>

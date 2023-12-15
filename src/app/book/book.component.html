@@ -1,7 +1,7 @@
 <ion-list appTitleColor>
   <ion-item-sliding *ngIf="book">
     <ion-item [routerLink]="'/book/' + book.id" [detail]="false" appTitleColor>
-      <ion-checkbox slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
+      <ion-checkbox color="warning" slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
 
       <ion-label class="ion-text-wrap" >
         <h2>
@@ -17,7 +17,7 @@
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option [routerLink]="'/edit/' + book.id">Edit</ion-item-option>
+      <ion-item-option color="warning" [routerLink]="'/edit/' + book.id">Edit</ion-item-option>
       <ion-item-option color="danger" (click)="delete(book.id)">Delete</ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
