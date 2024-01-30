@@ -16,7 +16,7 @@ export class EditComponent  implements OnInit {
   id: number | undefined
 
   constructor(
-    private readonly _data: DataService,
+    private readonly _bookService: DataService,
     private readonly _route: ActivatedRoute,
     private readonly _location: Location) {
       
@@ -25,7 +25,7 @@ export class EditComponent  implements OnInit {
   ngOnInit(): void {
     this._route.paramMap.subscribe((params: ParamMap) => {
       this.id = Number(params.get('id'));
-      this.book = this._data.getBookById(this.id);
+      this.book = this._bookService.getBookById(this.id);
       this._setForm();
     });
   }
@@ -39,13 +39,25 @@ export class EditComponent  implements OnInit {
 
     })}
 
-    submitForm(){
-      if (this.formBook?.valid){
-        const updatedBook: Book = this.formBook.value
-        this._data.update(updatedBook)
-        this._location.back();
-      }
+  //   submitForm(){
+  //     if (this.formBook?.valid){
+  //       // const updatedBook: Book = this.formBook.value
+  //       this._bookService.update(this.formBook.value)
+  //       this._location.back();
+  //     }
+  // }
+
+  submitForm() {
+    if (this.formBook?.valid) {
+      const updatedBook: Book = {
+        id: this.id!,
+        ...this.formBook.value
+      };
+      this._bookService.update(updatedBook);
+      this._location.back();
+    }
   }
+  
 
 }
 

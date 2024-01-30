@@ -116,6 +116,7 @@ export class DataService {
       this.books[index] = updatedData;
     }
   }
+  
   public delete(id: number){
     this.books = this.books.filter(item => item.id !== id)
   }
