@@ -7,5 +7,11 @@ import { TitleColorDirective } from "./title-color.directive";
     ],
     declarations: [TitleColorDirective]
   })
-  export class TitleColorModule {}
+  export class TitleColorModule {
+
+    readingBook(){
+        
+    }
+
+  }
   

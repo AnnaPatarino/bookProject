@@ -9,13 +9,15 @@
 
       <ion-label class="ion-text-wrap" >
         
-        <h2>
-          {{ book.title }}
+        <h2 #title>
+          {{ book.title }} <ion-badge *ngIf="showBadgeRead" class="dots" color="success" slot="start">read</ion-badge>
+          <ion-badge *ngIf="showbadgeReading" class="dots" color="warning" slot="start">reading</ion-badge>
+          </h2>
           <span class="date">
             <ion-note class="year">{{ book.publicationYear }}</ion-note>
             <ion-icon aria-hidden="true" name="chevron-forward" size="small" *ngIf="isIos()"></ion-icon>
           </span>
-        </h2>
+        
         <h3>{{ book.author }}</h3>
         <p>{{ book.description }}</p>
       </ion-label>
@@ -25,5 +27,10 @@
       <ion-item-option color="warning" [routerLink]="'/edit/' + book.id">Edit</ion-item-option>
       <ion-item-option color="danger" (click)="delete(book.id)">Delete</ion-item-option>
     </ion-item-options>
+    <ion-item-options side="start">
+      <ion-item-option color="warning" (click)="changeColor()">Reading</ion-item-option>
+    </ion-item-options>
   </ion-item-sliding>
+
+  
 </ion-list>
