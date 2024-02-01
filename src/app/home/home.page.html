@@ -1,15 +1,10 @@
 <ion-header [translucent]="true">
-  <!-- <ion-toolbar>
-    <ion-title>
-      <img class="logo" src="/assets/img/logo.png"/>
-      <ion-icon color="warning" class="iconplus" name ="add-circle-outline" (click)="goCreate()"></ion-icon>
-    </ion-title>
 
-  </ion-toolbar> -->
 
   <ion-toolbar>
     <ion-title><img class="logo" src="/assets/img/logo.png"/></ion-title>
     <ion-buttons [collapse]="true" slot="end">
+      <span><ion-title>Books I've read: {{ getBookCounter() | async }}</ion-title></span>
       <ion-button (click)="goCreate()" [routerLink] ="'create'"><ion-icon color="warning" class="iconplus" name ="add-circle-outline" ></ion-icon></ion-button>
     </ion-buttons>
   </ion-toolbar>

@@ -1,9 +1,14 @@
-<ion-list appTitleColor>
-  <ion-item-sliding *ngIf="book">
-    <ion-item [routerLink]="'/book/' + book.id" [detail]="false" appTitleColor>
-      <ion-checkbox color="warning" slot="start" (click)="$event.stopPropagation()"></ion-checkbox>
+
+<ion-list >
+  
+  <ion-item-sliding *ngIf="book" class="main-div">
+
+    <ion-item [routerLink]="'/book/' + book.id" [detail]="false" >
+
+      <ion-checkbox id="check" color="warning" slot="start" (click)="$event.stopPropagation()"  (ionChange)="counter($event)"></ion-checkbox>
 
       <ion-label class="ion-text-wrap" >
+        
         <h2>
           {{ book.title }}
           <span class="date">

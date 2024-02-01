@@ -4,6 +4,8 @@ import { RefresherCustomEvent } from '@ionic/angular';
 
 import { DataService, Book } from '../services/data.service';
 import { Router, } from '@angular/router';
+import { bookCounterService } from '../services/bookCounter.service';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,7 +15,8 @@ import { Router, } from '@angular/router';
 })
 export class HomePage {
   private data = inject(DataService);
-  constructor(private readonly _route: Router) { }
+  constructor(private readonly _route: Router,
+              private bookCounter: bookCounterService) { }
 
   refresh(ev: any) {
     setTimeout(() => {
@@ -27,5 +30,9 @@ export class HomePage {
 
   goCreate() {
     this._route.navigate(['create'])
+  }
+
+  getBookCounter(): Observable<number>{
+    return this.bookCounter.count$;
   }
 }
