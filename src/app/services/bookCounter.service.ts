@@ -14,7 +14,7 @@ export class bookCounterService{
     }
 
     decrementCounter(){
-        const newCounter = this.countSource.value - 1;
+        const newCounter = Math.max(0, this.countSource.value - 1);
         this.countSource.next(newCounter);
     }
 }

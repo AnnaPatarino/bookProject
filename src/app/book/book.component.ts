@@ -34,18 +34,19 @@ counter(event: CustomEvent){
   }else if(event.detail.checked === false){
     this.bookCounter.decrementCounter();
     this.showBadgeRead = false;
+    if(this.showbadgeReading === true){
+      this.bookCounter.decrementCounter();
+    }
+
   }
-  
 }
 
 changeColor(){
   if(this.title && this.title.nativeElement){
     this.showbadgeReading = true;
     this.showBadgeRead = false;
-
   }
 }
-
 
 // changeColor(): void {
 //   console.log('funziona');
@@ -58,6 +59,7 @@ changeColor(){
 
  delete(id: number){
     this.serviceBook.delete(id);
+    this.bookCounter.decrementCounter();
   }
 
 }
